@@ -18,6 +18,5 @@ jobs:
           rclone_config: ${{ secrets.RCLONE_CONFIG }}
           
       - run: |
-          rclone lsd nsfw:
-          # rclone copy pikpak:Nsfw nsfw: --transfers 16 --timeout 6h
-          # rclone copy pikpak:We share: --transfers 16 --timeout 6h
+          rclone copy pikpak:Nsfw nsfw: --transfers 16 --timeout 6h -vv
+          rclone copy pikpak:We share: --transfers 16 --timeout 6h -vv
