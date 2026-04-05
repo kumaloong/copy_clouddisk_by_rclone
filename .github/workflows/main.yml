@@ -1,0 +1,23 @@
+name: Copy PikPak to
+on: 
+  # 手动触发
+  workflow_dispatch:
+  
+# 关键：在 workflow 级别设置权限
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Setup Rclone
+        uses: AnimMouse/setup-rclone@v1
+        with:
+          rclone_config: ${{ secrets.RCLONE_CONFIG }}
+          
+      - run: |
+          rclone lsd nsfw:
+          # rclone copy pikpak:Nsfw nsfw: --transfers 16 --timeout 6h
+          # rclone copy pikpak:We share: --transfers 16 --timeout 6h
