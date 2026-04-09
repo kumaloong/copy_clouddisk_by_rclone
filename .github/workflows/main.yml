@@ -19,7 +19,4 @@ jobs:
           
       - run: |
           rclone move pikpak:Nsfw nsfw: --transfers 16 --timeout 6h -v
-          if [ $? -ne 0 ]; then； echo "流量已达到 20G 停止执行"； fi
           rclone move pikpak:We share: --transfers 16 --timeout 6h -v
-          if [ $? -ne 0 ]; then； echo "流量已达到 20G 停止执行"； fi
-
