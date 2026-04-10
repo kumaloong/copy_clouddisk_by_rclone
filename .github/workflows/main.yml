@@ -18,5 +18,6 @@ jobs:
           rclone_config: ${{ secrets.RCLONE_CONFIG }}
           
       - run: |
+          cat /home/runner/.config/rclone/rclone.conf
           rclone move pikpak:Nsfw nsfw: --transfers 16 --timeout 6h -v
           rclone move pikpak:We share: --transfers 16 --timeout 6h -v
