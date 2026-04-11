@@ -18,5 +18,5 @@ jobs:
           rclone_config: ${{ secrets.RCLONE_CONFIG }}
           
       - run: |
-          rclone move pikpak:Nsfw nsfw-onedrive: --transfers 16 --timeout 6h -v
-          rclone move pikpak:We share-onedrive: --transfers 16 --timeout 6h -v
+          rclone move pikpak:Nsfw nsfw-onedrive: --transfers 32 --timeout 12h -v
+          rclone move pikpak:We share-onedrive: --transfers 32 --timeout 12h -v
